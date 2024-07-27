@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { CommonModule } from './common/common.module';
 import { TaskModule } from './task/task.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { DataSource } from 'typeorm';
 
 @Module({
   controllers: [AppController],
@@ -18,8 +19,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: '123456',
       database: 'postgres',
       entities: [],
-      synchronize: true,
+      synchronize: false,
     }),
   ],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private dataSource: DataSource) {}
+}
