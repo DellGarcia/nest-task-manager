@@ -11,7 +11,10 @@ export class Task {
   @Column()
   description: string;
 
-  @Column({ default: Date.now() })
+  @Column()
+  status: string;
+
+  @Column({ default: new Date(Date.now()) })
   createdAt: Date;
 
   @Column()
