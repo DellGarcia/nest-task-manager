@@ -32,7 +32,7 @@ export class TaskService {
       throw new HttpException('Task Not Found', 404);
     }
 
-    return this.taskRepository.save({id, updateTaskDto});
+    return this.taskRepository.save({id, ...updateTaskDto});
   }
 
   remove(id: number) {
