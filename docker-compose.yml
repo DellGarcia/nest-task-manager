@@ -3,14 +3,23 @@ services:
   db:
     image: postgres
     restart: always
-    shm_size: 128mb
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
     ports:
       - 5432:5432
     environment:
       POSTGRES_PASSWORD: 123456
 
-  adminer:
-    image: adminer
-    restart: always
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest-api
+    environment:
+      - PORT=${API_PORT}
     ports:
-      - 8080:8080
+      - '3000:3000'
+    depends_on:
+      - db
+    volumes:
+      - ./src:/app/src
