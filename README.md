@@ -28,46 +28,22 @@
 
 ## Installation
 
-```bash
-$ pnpm install
-```
 
-## Running the app
+
+Será necessário criar o arquivo .env do projeto, basta cria-lo na raiz no projeto e adicionar as seguintes linhas:
 
 ```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+DATABASE_HOST=db
+DATABASE_TYPE=postgres
+DATABASE_NAME=postgres
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=123456
+DATABASE_PORT=5432
+API_PORT=3000
 ```
 
-## Test
-
+Para instalar as dependencias e executar essa API será necessário o uso do Docker, basta executar o seguinte comando na raiz do projeto:
 ```bash
-# unit tests
-$ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
+$ docker compose up -d
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
