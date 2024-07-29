@@ -47,3 +47,4 @@ Para instalar as dependencias e executar essa API será necessário o uso do Doc
 $ docker compose up -d
 ```
 
+A API estará disponivel em http://localhost:3000
